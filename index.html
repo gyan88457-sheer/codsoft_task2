@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM Interface</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="atm-container">
+        <div class="screen">
+            <div id="main-view" class="view active">
+                <div class="header">
+                    <h2>Welcome to Gemini Bank</h2>
+                </div>
+                <div class="content">
+                    <p class="balance-label">CURRENT BALANCE</p>
+                    <p class="balance-amount" id="main-balance">$500.00</p>
+                    <p class="message" id="main-message">Please select an option below.</p>
+                </div>
+            </div>
+
+            <div id="deposit-view" class="view">
+                <div class="header">
+                    <h2>Deposit Funds</h2>
+                </div>
+                <div class="content">
+                    <p>Enter amount to deposit:</p>
+                    <input type="number" id="deposit-amount" placeholder="0.00">
+                    <div class="action-buttons">
+                        <button class="btn-confirm" id="confirm-deposit">Confirm</button>
+                        <button class="btn-cancel" data-target="main-view">Cancel</button>
+                    </div>
+                </div>
+            </div>
+
+            <div id="withdraw-view" class="view">
+                <div class="header">
+                    <h2>Withdraw Funds</h2>
+                </div>
+                <div class="content">
+                    <p>Enter amount to withdraw:</p>
+                    <input type="number" id="withdraw-amount" placeholder="0.00">
+                    <div class="action-buttons">
+                        <button class="btn-confirm" id="confirm-withdraw">Confirm</button>
+                        <button class="btn-cancel" data-target="main-view">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button class="action-btn" id="check-balance-btn">Check Balance</button>
+            <button class="action-btn" data-target="deposit-view">Deposit</button>
+            <button class="action-btn" data-target="withdraw-view">Withdraw</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
